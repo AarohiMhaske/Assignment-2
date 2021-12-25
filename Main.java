@@ -1,20 +1,26 @@
 package com.company;
-import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-	// Palindrome Program
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number: ");
-        String reverse = "";
-        String num = sc.nextLine();
-        int length = num.length();
-        for ( int i = length - 1; i >= 0; i-- )
-            reverse = reverse + num.charAt(i);
-        if (num.equals(reverse))
-            System.out.println(num +" is a palindrome.");
-        else
-            System.out.println(num +"  isn't a palindrome.");
+	// Duplicate characters in a string
+        String string1 = "AAD assignment";
+        int count;
+
+        char string[] = string1.toCharArray();
+
+        System.out.println("Original string: AAD assignment ");
+        System.out.println("Duplicate characters in a given string: ");
+        for(int i = 0; i <string.length; i++) {
+            count = 1;
+            for(int j = i+1; j <string.length; j++) {
+                if(string[i] == string[j] && string[i] != ' ') {
+                    count++;
+                    string[j] = '0';
+                }
+            }
+            if(count > 1 && string[i] != '0')
+                System.out.println(string[i]);
+        }
     }
 }
